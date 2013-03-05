@@ -34,7 +34,6 @@ NSString *const kSMQuestionOperationKey = @"currentQuestionIndex";
     if (![super init]) return nil;
     
     _qvc = aViewController;
-    [self initializeCurrentQuestionIndexObservation];
     
     return self;
 }
@@ -63,6 +62,11 @@ NSString *const kSMQuestionOperationKey = @"currentQuestionIndex";
          
          [weak_self dispatchQuestionOperationForIndex:changedValue];
      }];
+}
+
+- (void)cleanupObservations
+{
+    [[MAKVONotificationCenter defaultCenter] removeAllObservers];
 }
 
 #pragma mark - Operations

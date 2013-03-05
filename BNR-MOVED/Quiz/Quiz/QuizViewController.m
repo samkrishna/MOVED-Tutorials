@@ -34,13 +34,13 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self intializeCurrentQuestionIndexObservation];
+    [self.qed initializeCurrentQuestionIndexObservation];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [[MAKVONotificationCenter defaultCenter] removeAllObservers];
+    [self.qed cleanupObservations];
 }
 
 - (void)viewDidAppear:(BOOL)animated

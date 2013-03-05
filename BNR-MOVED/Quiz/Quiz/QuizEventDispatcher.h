@@ -15,5 +15,7 @@
 @property (nonatomic, readonly, weak) QuizViewController *qvc;
 
 - (id)initWithViewController:(QuizViewController *)aViewController;
+- (void)initializeCurrentQuestionIndexObservation;
+- (void)cleanupObservations;
 
 @end
