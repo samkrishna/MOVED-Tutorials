@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class QuizEventDispatcher;
+@class QuizViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) QuizEventDispatcher *viewController;
+@property (strong, nonatomic) QuizViewController *viewController;
 
 @end

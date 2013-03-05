@@ -584,7 +584,7 @@
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
-				<string key="-1.CustomClassName">QuizEventDispatcher</string>
+				<string key="-1.CustomClassName">QuizViewController</string>
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -651,7 +651,7 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">QuizEventDispatcher</string>
+					<string key="className">QuizViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="showAnswer:">id</string>
@@ -683,7 +683,7 @@
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/QuizEventDispatcher.h</string>
+						<string key="minorKey">./Classes/QuizViewController.h</string>
 					</object>
 				</object>
 			</array>

@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "QuizEventDispatcher.h"
+#import "QuizViewController.h"
 
 @implementation AppDelegate
 
@@ -16,7 +16,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-	self.viewController = [[QuizEventDispatcher alloc] init];
+	self.viewController = [[QuizViewController alloc] init];
 	self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

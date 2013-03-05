@@ -1,26 +1,19 @@
 //
 //  QuizEventDispatcher.h
-//  Quiz
+//  01.Quiz
 //
-//  Created by Sam Krishna on 3/4/13.
+//  Created by Sam Krishna on 3/5/13.
 //  Copyright (c) 2013 SectorMobile. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface QuizEventDispatcher : UIViewController
+@class QuizViewController;
 
-// Models
-@property (nonatomic, assign) NSUInteger currentQuestionIndex;
-@property (nonatomic, strong) NSArray *questions;
-@property (nonatomic, strong) NSArray *answers;
+@interface QuizEventDispatcher : NSObject
 
-// Views
-@property (nonatomic, strong) IBOutlet UILabel *questionField;
-@property (nonatomic, strong) IBOutlet UILabel *answerField;
+@property (nonatomic, readonly, weak) QuizViewController *qvc;
 
-// Events and Operations
-- (IBAction)showQuestion:(id)sender;
-- (IBAction)showAnswer:(id)sender;
+- (id)initWithViewController:(QuizViewController *)aViewController;
 
 @end
