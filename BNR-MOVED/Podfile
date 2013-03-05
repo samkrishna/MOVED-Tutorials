@@ -1,0 +1,5 @@
+platform :ios, '6.0'
+
+xcodeproj 'Quiz/01.Quiz.xcodeproj'
+
+pod 'MAKVONotificationCenter', '~> 0.0.2'
