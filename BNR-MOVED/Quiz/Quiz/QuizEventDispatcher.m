@@ -11,7 +11,7 @@
 
 static dispatch_queue_t sm_moved_queue;
 
-NSString * const SMQuestionOperationKey = @"currentQuestionIndex";
+NSString *const SMQuestionOperationKey = @"currentQuestionIndex";
 
 @interface QuizEventDispatcher ()
 
