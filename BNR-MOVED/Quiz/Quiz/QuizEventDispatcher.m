@@ -7,6 +7,7 @@
 //
 
 #import "QuizEventDispatcher.h"
+#import "MAKVONotificationCenter.h"
 
 static dispatch_queue_t sm_moved_queue;
 
@@ -49,18 +50,13 @@ NSString * const SMQuestionOperationKey = @"currentQuestionIndex";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self addObserver:self
-           forKeyPath:SMQuestionOperationKey
-              options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
-              context:NULL];
+    [self intializeCurrentQuestionIndexObservation];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self removeObserver:self
-              forKeyPath:SMQuestionOperationKey
-                 context:NULL];
+    [[MAKVONotificationCenter defaultCenter] removeAllObservers];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -92,17 +88,23 @@ NSString * const SMQuestionOperationKey = @"currentQuestionIndex";
 
 #pragma mark - Observations
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+- (void)intializeCurrentQuestionIndexObservation
 {
-    if ([object isEqual:self] && [keyPath isEqualToString:SMQuestionOperationKey]) {
-        NSUInteger changedValue = [[change objectForKey:NSKeyValueChangeNewKey] unsignedIntegerValue];
-        if (changedValue >= [self.questions count]) {
+    __weak typeof(self) weak_self = self;
+	[[MAKVONotificationCenter defaultCenter] observeTarget:self
+                                                   keyPath:SMQuestionOperationKey
+                                                   options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
+                                                     block:^(MAKVONotification *notification)
+    {
+		NSUInteger changedValue = [[change objectForKey:NSKeyValueChangeNewKey] unsignedIntegerValue];
+        if (changedValue >= [weak_self.questions count])
+        {
             changedValue = 0;
-            _currentQuestionIndex = changedValue;
+            weak_self.currentQuestionIndex = changedValue;
         }
-
-        [self dispatchQuestionOperationForIndex:changedValue];
-    }
+		
+        [weak_self dispatchQuestionOperationForIndex:changedValue];
+	}];
 }
 
 #pragma mark - Operations
