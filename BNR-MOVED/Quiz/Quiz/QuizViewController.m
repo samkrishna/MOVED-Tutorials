@@ -67,7 +67,7 @@
 
 - (IBAction)showAnswer:(id)sender
 {
-    [self dispatchAnswerOperationForIndex:self.currentQuestionIndex];
+    [self.qed dispatchAnswerOperationForIndex:self.currentQuestionIndex];
 }
 
 @end

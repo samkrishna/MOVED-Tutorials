@@ -12,7 +12,7 @@
 
 static dispatch_queue_t sm_moved_queue;
 
-NSString *const kSMQuestionOperationKey = @"currentQuestionIndex";
+NSString * const kSMQuestionOperationKey = @"currentQuestionIndex";
 
 @interface QuizEventDispatcher ()
 - (void)initializeCurrentQuestionIndexObservation;
@@ -76,7 +76,7 @@ NSString *const kSMQuestionOperationKey = @"currentQuestionIndex";
     __weak typeof(self) weak_self = self;
 	dispatch_async(sm_moved_queue, ^{
         if (operation) {
-            operation(sender);
+            operation(weak_self.qvc);
         }
     });
 }
@@ -86,7 +86,7 @@ NSString *const kSMQuestionOperationKey = @"currentQuestionIndex";
     __weak typeof(self) weak_self = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         if (operation) {
-            operation(sender);
+            operation(weak_self.qvc);
         }
     });
 }

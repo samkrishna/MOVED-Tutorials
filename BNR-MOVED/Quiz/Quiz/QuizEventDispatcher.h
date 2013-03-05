@@ -18,4 +18,7 @@
 - (void)initializeCurrentQuestionIndexObservation;
 - (void)cleanupObservations;
 
+- (void)dispatchQuestionOperationForIndex:(NSUInteger)index;
+- (void)dispatchAnswerOperationForIndex:(NSUInteger)index;
+
 @end
