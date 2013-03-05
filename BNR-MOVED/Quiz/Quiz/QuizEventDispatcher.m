@@ -96,7 +96,7 @@ NSString * const SMQuestionOperationKey = @"currentQuestionIndex";
                                                    options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
                                                      block:^(MAKVONotification *notification)
     {
-		NSUInteger changedValue = [[change objectForKey:NSKeyValueChangeNewKey] unsignedIntegerValue];
+		NSUInteger changedValue = [[notification newValue] unsignedIntegerValue];
         if (changedValue >= [weak_self.questions count])
         {
             changedValue = 0;
