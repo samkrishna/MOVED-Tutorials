@@ -1,8 +1,8 @@
-# platform :ios, '6.1'
+platform :ios, '6.1'
 workspace '/Users/achilles/Projects/MOVED-Tutorials/BNR-MOVED/BNR-MOVED.xcworkspace'
 xcodeproj '01.Quiz/Quiz.xcodeproj'
 # xcodeproj '02.RandomPossessions/RandomPossessions.xcodeproj'
-
+#
 # pod 'MAKVONotificationCenter', '~> 0.0.2'
 
 target 'Quiz' do
