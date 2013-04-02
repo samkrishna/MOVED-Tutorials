@@ -1,5 +1,18 @@
-platform :ios, '6.0'
+# platform :ios, '6.1'
+workspace '/Users/achilles/Projects/MOVED-Tutorials/BNR-MOVED/BNR-MOVED.xcworkspace'
+xcodeproj '01.Quiz/Quiz.xcodeproj'
+# xcodeproj '02.RandomPossessions/RandomPossessions.xcodeproj'
 
-xcodeproj 'Quiz/01.Quiz.xcodeproj'
+# pod 'MAKVONotificationCenter', '~> 0.0.2'
 
-pod 'MAKVONotificationCenter', '~> 0.0.2'
+target 'Quiz' do
+	platform :ios
+	xcodeproj '01.Quiz/Quiz.xcodeproj'
+	pod 'MAKVONotificationCenter', '~> 0.0.2'
+end
+
+target 'RandomPossessions' do
+	platform :osx
+	xcodeproj '02.RandomPossessions/RandomPossessions.xcodeproj'
+	pod 'MAKVONotificationCenter', '~> 0.0.2'
+end

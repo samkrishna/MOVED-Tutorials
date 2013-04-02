@@ -1,13 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Workspace
-   version = "1.0">
-   <FileRef
-      location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Quiz/01.Quiz.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:RandomPossessions/02.RandomPossessions.xcodeproj">
-   </FileRef>
-</Workspace>
+<?xml version='1.0' encoding='UTF-8'?><Workspace version='1.0'><FileRef location='group:01.Quiz/Quiz.xcodeproj'/><FileRef location='group:02.RandomPossessions/RandomPossessions.xcodeproj'/><FileRef location='group:Pods/Pods.xcodeproj'/></Workspace>
